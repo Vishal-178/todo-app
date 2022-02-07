@@ -1,0 +1,22 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "project for node course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vishal-178/todo-app.git"
+  },
+  "author": "Vishal Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vishal-178/todo-app/issues"
+  },
+  "homepage": "https://github.com/Vishal-178/todo-app#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
