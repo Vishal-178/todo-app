@@ -1,0 +1,175 @@
+:root {
+    --main-color: #807e81;
+}
+body{
+    margin: 0px;
+    font-family: sans-serif;
+    background-color: #807e81;
+    
+}
+main{
+    margin-left:15vw ;
+    margin-right: 15vw;
+    background-color: white;
+}
+#heading{
+    text-align: center;
+    color: var(--main-color);
+    margin: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.heading{
+    color: var(--main-color);
+}
+
+.design-input-box{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #383633;
+    height: 50px;
+    padding: 5px;
+    
+}
+.c-d-width div{
+    width:100vw;
+}
+.design-input-box:hover{
+    box-shadow: 0px 2px 1px rgba(16, 29, 24, 0.4);
+}
+.category-and-date{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+.input-select{
+    border: none;
+    height: 100vh;
+    font-weight:bolder;
+    color: var(--main-colors);
+}
+label{
+    color: var(--main-color);
+    font-size: 0.8rem;
+}
+
+.input-select{
+    outline: none;
+}
+
+
+/* -------date picker when click any where inside input type text */
+ #session-date {
+    display: inline-block;
+    position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+   
+}
+button{
+    margin: 10px;
+    padding-right: 20px;
+    height: 45px;
+    
+  text-transform: uppercase;
+  letter-spacing: 2;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 247, 255, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
+
+button:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 50px rgba(0, 255, 157, 0.4);
+    color: #fff;
+}  
+#button-1{
+    background-color: #444444;
+}
+#button-2{
+    background-color: #ee351e;
+}
+i{
+    margin: 10px;
+}
+
+/* ------------working on item list----------- */
+
+#list-item{
+    display: flex;
+    flex-direction: column;
+}
+#list-body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #b19b77;
+}
+#heading-date{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#item-date{
+    font-size: small;
+    color:#89888a;
+    margin-left: 23px;
+}
+#list-span{
+    margin: 10px;
+}
+
+.label-of-work{
+    margin-right: 15px;
+    background-color: #2EE59D;
+    padding: 10px;
+}
+#personal{
+ background-color: aqua;
+}
+#work{
+    background-color: rgb(0, 255, 76);
+}
+#school{
+    background-color: rgb(0, 26, 255);
+}
+#cleaning{
+    background-color: rgb(238, 255, 0);
+}
+#other{
+    background-color: rgb(255, 0, 179);
+}
+input[type=checkbox]:checked + #list-span{
+    color: red;
+}
+/* media for other display */
+@media only screen and (max-width: 820px) {
+    main{
+        margin-left:10vw ;
+    margin-right: 10vw;
+    }
+}
+@media only screen and (max-width: 550px) {
+    main{
+        margin: 0px;
+    }
+}
+
+  

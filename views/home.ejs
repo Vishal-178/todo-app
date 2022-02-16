@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> </title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <!-- my css file -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <main id="changeTheam">
+        <!-- form to take input from user -->
+        <form action="/create-list" method="POST">
+            <div id="everyting-in-form">
+                <!-- heading of todo app -->
+                <h1 id="heading">TODO App</h1>
+                <div class="design-input-box">
+                    <!-- taking description data from user -->
+                    <label for="description" class="heading">DESCRIPTION</label>
+                    <textarea name="description" wrap="off" id="description" class="input-select" placeholder="What do you want to do?" required></textarea>
+                </div>
+                <div class="category-and-date c-d-width">
+
+                    <div class="design-input-box" id="category">
+                        <!-- select the Catogery -->
+                        <label for="select" class="heading">CATEGORY</label>
+                        <select name="select" id="select" class="input-select">
+                            <option value="">Chose A Catogery</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Work">Work</option>
+                            <option value="School">School</option>
+                            <option value="Cleaning">Cleaning</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="design-input-box" id="date">
+                        <!-- Date input -->
+                        <Label for="session-date" class="heading">DUE DATE</Label>
+                        <input type="date" name="date" id="session-date"  class="input-select">
+                    </div>
+                </div>
+                <div class="category-and-date">
+                    <div>
+                        <!-- button to submit the form -->
+                        <button id="button-1" type="submit" >
+                            <i class="fas fa-plus"></i>
+                            ADD TASK</button>
+                    </div>
+                    <div>
+                        <!-- button to delete the item from item -->
+                        <button id="button-2" form="delete-item" type="submit" >
+                            <i class="fas fa-trash-alt"></i>
+                            DELETE TASKS
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div id="list-item">
+            <!-- form to display list item and display item list from dataBase. -->
+            <form action="/delete" id="delete-item">
+                <!-- using ejs for loop to content length from database to display all item -->
+                <% for( let i = 0; i < contact.length; i++ ) { %>
+                    <div id="list-body">
+                            <div id="heading-date">
+                                <!-- input checkbox for each item in the list-->
+                                <input type="checkbox" name="id" id="check-input" value="<%= contact[i]._id %>">
+                                <!-- span is use to display each description -->
+                                <span id="list-span"><%= contact[i].description %> </span>
+                                <!-- p is use to display date -->
+                                <p id="item-date">
+                                    <!-- checking if date is not set then no deadline else display the date -->
+                                    <% if (contact[i].date==="") { %>
+                                        <i class="fas fa-calendar-alt"></i>
+                                        No Deadline
+                                        <% } else { %>
+                                            <i class="fas fa-calendar-alt"></i>
+                                            <%= contact[i].date %>
+                                    <% } %>
+                                    
+                                </p>
+                            </div>
+                            <!-- checking which Catogery is select and display the color of each Catogery depending on Catogery -->
+                        <% if (contact[i].select==="Personal") { %>
+                            <span class="label-of-work" id="personal">Personal</span>
+                        <% } %>
+                        <% if (contact[i].select==="Work") { %>
+                            <span class="label-of-work" id="pork">Work</span>
+                        <% } %>
+                        <% if (contact[i].select==="School") { %>
+                            <span class="label-of-work" id="school">School</span>
+                        <% } %>
+                        <% if (contact[i].select==="Cleaning") { %>
+                            <span class="label-of-work" id="cleaning">Cleaning</span>
+                        <% } %>
+                        <% if (contact[i].select==="Other") { %>
+                            <span class="label-of-work" id="other">Other</span>
+                        <% } %>
+                    </div>
+                <% } %>
+            </form>
+        </div>
+    </main>
+    <!-- my js file -->
+    <script src="js/script.js"></script>
+</body>
+</html>
