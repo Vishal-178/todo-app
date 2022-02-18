@@ -4,7 +4,6 @@ const homeController = require('../controllers/home_controller');
 const listController = require('../controllers/list_controller');
 const deleteController = require('../controllers/delete_controller');
 
-
 // home page
 router.get('/',homeController.home);
 // link to create a new Item in list

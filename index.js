@@ -4,6 +4,7 @@ const path = require('path');
 const app = express();
 // port for localhost
 const port = 7000;
+// const expressLayouts = require('express-ejs-layouts');
 // connecting to database
 const db = require('./config/mongoose');
 const Contact = require('./modules/contact');
